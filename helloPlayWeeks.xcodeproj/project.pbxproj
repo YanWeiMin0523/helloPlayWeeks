@@ -18,6 +18,8 @@
 		7ABF04291C3A505F009205B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ABF04281C3A505F009205B6 /* Main.storyboard */; };
 		7ABF042B1C3A5082009205B6 /* Mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ABF042A1C3A5082009205B6 /* Mine.storyboard */; };
 		7ABF042D1C3A50C5009205B6 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ABF042C1C3A50C5009205B6 /* Discover.storyboard */; };
+		7ABF04351C3A766E009205B6 /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABF04331C3A766E009205B6 /* MainTableViewCell.m */; };
+		7ABF04361C3A766E009205B6 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7ABF04341C3A766E009205B6 /* MainTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,9 @@
 		7ABF04281C3A505F009205B6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../DIscover/Views/Main.storyboard; sourceTree = "<group>"; };
 		7ABF042A1C3A5082009205B6 /* Mine.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mine.storyboard; sourceTree = "<group>"; };
 		7ABF042C1C3A50C5009205B6 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
+		7ABF04321C3A766E009205B6 /* MainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
+		7ABF04331C3A766E009205B6 /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
+		7ABF04341C3A766E009205B6 /* MainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		A2D7048C9AF3F346ABCDC372 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F16A3B3AFA7DDD07048C4FB4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,6 +191,9 @@
 			isa = PBXGroup;
 			children = (
 				7ABF04281C3A505F009205B6 /* Main.storyboard */,
+				7ABF04321C3A766E009205B6 /* MainTableViewCell.h */,
+				7ABF04331C3A766E009205B6 /* MainTableViewCell.m */,
+				7ABF04341C3A766E009205B6 /* MainTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -301,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ABF04361C3A766E009205B6 /* MainTableViewCell.xib in Resources */,
 				7ABF04291C3A505F009205B6 /* Main.storyboard in Resources */,
 				7ABF03D71C3A1C4B009205B6 /* Assets.xcassets in Resources */,
 				7ABF042D1C3A50C5009205B6 /* Discover.storyboard in Resources */,
@@ -364,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ABF04351C3A766E009205B6 /* MainTableViewCell.m in Sources */,
 				7ABF03D51C3A1C4B009205B6 /* AppDelegate.m in Sources */,
 				7ABF04241C3A4F2E009205B6 /* DiscoverViewController.m in Sources */,
 				7ABF04261C3A4F2E009205B6 /* MineViewController.m in Sources */,
