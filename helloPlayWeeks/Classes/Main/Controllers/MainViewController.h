@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface MainViewController : UIViewController
+#import <AFURLSessionManager.h>
+#import <AFNetworking/AFHTTPSessionManager.h>
+@interface MainViewController : UIViewController<NSURLSessionDataDelegate, NSURLSessionTaskDelegate, NSURLSessionDownloadDelegate, NSURLSessionDelegate>
 
 @end

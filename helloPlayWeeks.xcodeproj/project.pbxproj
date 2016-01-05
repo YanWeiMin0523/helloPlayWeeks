@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		234D2F041FB255FA92FAF68E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B52C5D701A3690D8F42AB1D /* libPods.a */; };
+		7A87446B1C3BA069000228C8 /* MainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A87446A1C3BA069000228C8 /* MainModel.m */; };
 		7ABF03D21C3A1C4B009205B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABF03D11C3A1C4B009205B6 /* main.m */; };
 		7ABF03D51C3A1C4B009205B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABF03D41C3A1C4B009205B6 /* AppDelegate.m */; };
 		7ABF03D71C3A1C4B009205B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7ABF03D61C3A1C4B009205B6 /* Assets.xcassets */; };
@@ -24,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		0B52C5D701A3690D8F42AB1D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A8744691C3BA069000228C8 /* MainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainModel.h; sourceTree = "<group>"; };
+		7A87446A1C3BA069000228C8 /* MainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainModel.m; sourceTree = "<group>"; };
 		7ABF03CD1C3A1C4B009205B6 /* helloPlayWeeks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = helloPlayWeeks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ABF03D11C3A1C4B009205B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7ABF03D31C3A1C4B009205B6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -183,6 +186,8 @@
 		7ABF041C1C3A4F2E009205B6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7A8744691C3BA069000228C8 /* MainModel.h */,
+				7A87446A1C3BA069000228C8 /* MainModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -379,6 +384,7 @@
 				7ABF04261C3A4F2E009205B6 /* MineViewController.m in Sources */,
 				7ABF03D21C3A1C4B009205B6 /* main.m in Sources */,
 				7ABF04251C3A4F2E009205B6 /* MainViewController.m in Sources */,
+				7A87446B1C3BA069000228C8 /* MainModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
