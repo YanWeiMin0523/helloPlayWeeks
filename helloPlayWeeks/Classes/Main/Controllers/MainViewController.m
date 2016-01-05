@@ -124,6 +124,10 @@
     //轮播图
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 186)];
     scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width * self.adArray.count, 0);
+    //图片整张滑动
+    scrollView.pagingEnabled = YES;
+    //不显示水平滑动条
+    scrollView.showsHorizontalScrollIndicator = NO;
     for (int i = 0; i < self.adArray.count; i++) {
         UIImageView *scrollImage = [[UIImageView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width * i, 0, [UIScreen mainScreen].bounds.size.width, 186)];
         [scrollImage sd_setImageWithURL:[NSURL URLWithString:self.adArray[i]] placeholderImage:nil];
