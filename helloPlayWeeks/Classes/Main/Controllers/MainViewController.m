@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "MainTableViewCell.h"
 #import "MainModel.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 @interface MainViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 //全部列表数据
@@ -17,7 +18,8 @@
 @property(nonatomic, strong) NSMutableArray *recommandArray;
 //推荐活动数据
 @property(nonatomic, strong) NSMutableArray *activityArray;
-
+//广告数据
+@property(nonatomic, strong) NSMutableArray *adArray;
 @end
 
 @implementation MainViewController
@@ -79,22 +81,27 @@
 //返回分区
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return self.listArray.count;
+    
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-//    if (section == 0) {
-//        return 343;
-//    }
-//    return 0;
-//}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    
+    return 25;
+}
 
-////自定义分区头部
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-//    
-//
-//    
-//    return nil;
-//}
+//自定义分区头部
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *view = [[UIView alloc] init];
+    UIImageView *headerView = [[UIImageView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2 - 160, 5, 320, 16)];
+    if (section == 0) {
+        headerView.image = [UIImage imageNamed:@"home_recommed_ac"];
+    }else{
+        headerView.image = [UIImage imageNamed:@"home_recommd_rc"];
+    }
+    [view addSubview:headerView];
+    
+    return view;
+}
 
 
 #pragma mark --------  Coustom Method
@@ -112,8 +119,42 @@
 - (void)configTableViewHiderView{
   
     UIView *tableViewHeader = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 343)];
-    tableViewHeader.backgroundColor = [UIColor yellowColor];
     self.tableView.tableHeaderView = tableViewHeader;
+    
+    //轮播图
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 186)];
+    scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width * self.adArray.count, 0);
+    for (int i = 0; i < self.adArray.count; i++) {
+        UIImageView *scrollImage = [[UIImageView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width * i, 0, [UIScreen mainScreen].bounds.size.width, 186)];
+        [scrollImage sd_setImageWithURL:[NSURL URLWithString:self.adArray[i]] placeholderImage:nil];
+        
+        [scrollView addSubview:scrollImage];
+    }
+    [tableViewHeader addSubview:scrollView];
+    
+    //按钮
+    for (int i = 0; i < 4; i++) {
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        btn.frame = CGRectMake([UIScreen mainScreen].bounds.size.width / 4 * i, 186, [UIScreen mainScreen].bounds.size.width / 4, [UIScreen mainScreen].bounds.size.width / 4);
+        NSString *imageStr = [NSString stringWithFormat:@"home_icon_%02d", i + 1];
+        [btn setImage:[UIImage imageNamed:imageStr] forState:UIControlStateNormal];
+        btn.tag = 1 + i;
+        [btn addTarget:self action:@selector(mainGoodActivityAction:) forControlEvents:UIControlEventTouchUpInside];
+        [tableViewHeader addSubview:btn];
+        
+    }
+    
+    //精选活动&热门专题
+    for (int i = 0; i < 2; i++) {
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        btn.frame = CGRectMake([UIScreen mainScreen].bounds.size.width / 2 * i, 186 + [UIScreen mainScreen].bounds.size.width / 4, [UIScreen mainScreen].bounds.size.width / 2, 343 - 186 - [UIScreen mainScreen].bounds.size.width / 4);
+        NSString *imageStr = [NSString stringWithFormat:@"home_%02d", i];
+        [btn setImage:[UIImage imageNamed:imageStr] forState:UIControlStateNormal];
+        btn.tag = 1 + i;
+        [btn addTarget:self action:@selector(mainActivityAction:) forControlEvents:UIControlEventTouchUpInside];
+        [tableViewHeader addSubview:btn];
+        
+    }
     
     
 }
@@ -124,7 +165,7 @@
     AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
     [manger.responseSerializer setAcceptableContentTypes:[NSSet setWithObject:@"text/html"]];
     [manger GET:urlStr parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-        NSLog(@"%@",downloadProgress);
+
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *resultDic = responseObject;
         NSString *status = resultDic[@"status"];
@@ -154,6 +195,12 @@
             
             //推荐广告
             NSArray *adDataArray = dic[@"adData"];
+            for (NSDictionary *dict in adDataArray) {
+                [self.adArray addObject:dict[@"url"]];
+            }
+            //拿到数据之后重新刷新tableView头部数据
+            [self configTableViewHiderView];
+            
             NSString *cityName = dic[@"cityname"];
             //以请求回来的城市数据修改导航栏左侧的标题
             self.navigationItem.leftBarButtonItem.title = cityName;
@@ -170,6 +217,17 @@
     }];
     
    
+    
+}
+
+//四个小按钮方法
+- (void)mainActivityAction:(UIButton *)btn{
+    
+
+    
+}
+//精选活动&热门专题
+- (void)mainGoodActivityAction:(UIButton *)btn{
     
 }
 
@@ -195,6 +253,13 @@
         self.activityArray = [NSMutableArray new];
     }
     return _activityArray;
+}
+
+- (NSMutableArray *)adArray{
+    if (!_adArray) {
+        self.adArray = [NSMutableArray new];
+    }
+    return _adArray;
 }
 
 - (void)didReceiveMemoryWarning {
