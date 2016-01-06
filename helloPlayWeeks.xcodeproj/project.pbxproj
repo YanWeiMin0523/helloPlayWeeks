@@ -21,12 +21,20 @@
 		7ABF042D1C3A50C5009205B6 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ABF042C1C3A50C5009205B6 /* Discover.storyboard */; };
 		7ABF04351C3A766E009205B6 /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABF04331C3A766E009205B6 /* MainTableViewCell.m */; };
 		7ABF04361C3A766E009205B6 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7ABF04341C3A766E009205B6 /* MainTableViewCell.xib */; };
+		7ADDCD071C3CBC1600654B93 /* SelectCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADDCD061C3CBC1500654B93 /* SelectCityViewController.m */; };
+		7ADDCD0A1C3CBD9300654B93 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADDCD091C3CBD9300654B93 /* SearchViewController.m */; };
+		7ADDCD0D1C3CBE7E00654B93 /* ActivityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADDCD0C1C3CBE7E00654B93 /* ActivityDetailViewController.m */; };
+		7ADDCD101C3CBF4800654B93 /* ThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADDCD0F1C3CBF4800654B93 /* ThemeViewController.m */; };
+		7ADDCD131C3CBFE700654B93 /* ClsaafityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADDCD121C3CBFE700654B93 /* ClsaafityViewController.m */; };
+		7ADDCD161C3CC07600654B93 /* GoodThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADDCD151C3CC07600654B93 /* GoodThemeViewController.m */; };
+		7ADDCD191C3CC0E900654B93 /* HotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADDCD181C3CC0E900654B93 /* HotViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0B52C5D701A3690D8F42AB1D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A8744691C3BA069000228C8 /* MainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainModel.h; sourceTree = "<group>"; };
 		7A87446A1C3BA069000228C8 /* MainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainModel.m; sourceTree = "<group>"; };
+		7A87448D1C3BFA19000228C8 /* playWeeks.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = playWeeks.pch; sourceTree = "<group>"; };
 		7ABF03CD1C3A1C4B009205B6 /* helloPlayWeeks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = helloPlayWeeks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ABF03D11C3A1C4B009205B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7ABF03D31C3A1C4B009205B6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -46,6 +54,21 @@
 		7ABF04321C3A766E009205B6 /* MainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
 		7ABF04331C3A766E009205B6 /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
 		7ABF04341C3A766E009205B6 /* MainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
+		7ADDCD041C3CB30A00654B93 /* PWDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PWDefine.h; path = ../PWDefine.h; sourceTree = "<group>"; };
+		7ADDCD051C3CBC1500654B93 /* SelectCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectCityViewController.h; sourceTree = "<group>"; };
+		7ADDCD061C3CBC1500654B93 /* SelectCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCityViewController.m; sourceTree = "<group>"; };
+		7ADDCD081C3CBD9300654B93 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		7ADDCD091C3CBD9300654B93 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		7ADDCD0B1C3CBE7E00654B93 /* ActivityDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDetailViewController.h; sourceTree = "<group>"; };
+		7ADDCD0C1C3CBE7E00654B93 /* ActivityDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityDetailViewController.m; sourceTree = "<group>"; };
+		7ADDCD0E1C3CBF4800654B93 /* ThemeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeViewController.h; sourceTree = "<group>"; };
+		7ADDCD0F1C3CBF4800654B93 /* ThemeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeViewController.m; sourceTree = "<group>"; };
+		7ADDCD111C3CBFE700654B93 /* ClsaafityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClsaafityViewController.h; sourceTree = "<group>"; };
+		7ADDCD121C3CBFE700654B93 /* ClsaafityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClsaafityViewController.m; sourceTree = "<group>"; };
+		7ADDCD141C3CC07600654B93 /* GoodThemeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodThemeViewController.h; sourceTree = "<group>"; };
+		7ADDCD151C3CC07600654B93 /* GoodThemeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodThemeViewController.m; sourceTree = "<group>"; };
+		7ADDCD171C3CC0E900654B93 /* HotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotViewController.h; sourceTree = "<group>"; };
+		7ADDCD181C3CC0E900654B93 /* HotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotViewController.m; sourceTree = "<group>"; };
 		A2D7048C9AF3F346ABCDC372 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F16A3B3AFA7DDD07048C4FB4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +115,7 @@
 		7ABF03CF1C3A1C4B009205B6 /* helloPlayWeeks */ = {
 			isa = PBXGroup;
 			children = (
+				7A87448D1C3BFA19000228C8 /* playWeeks.pch */,
 				7ABF03D31C3A1C4B009205B6 /* AppDelegate.h */,
 				7ABF03D41C3A1C4B009205B6 /* AppDelegate.m */,
 				7ABF04001C3A4E33009205B6 /* Library */,
@@ -116,6 +140,7 @@
 		7ABF04001C3A4E33009205B6 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				7ADDCD041C3CB30A00654B93 /* PWDefine.h */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -179,6 +204,20 @@
 			children = (
 				7ABF041A1C3A4F2E009205B6 /* MainViewController.h */,
 				7ABF041B1C3A4F2E009205B6 /* MainViewController.m */,
+				7ADDCD051C3CBC1500654B93 /* SelectCityViewController.h */,
+				7ADDCD061C3CBC1500654B93 /* SelectCityViewController.m */,
+				7ADDCD081C3CBD9300654B93 /* SearchViewController.h */,
+				7ADDCD091C3CBD9300654B93 /* SearchViewController.m */,
+				7ADDCD0B1C3CBE7E00654B93 /* ActivityDetailViewController.h */,
+				7ADDCD0C1C3CBE7E00654B93 /* ActivityDetailViewController.m */,
+				7ADDCD0E1C3CBF4800654B93 /* ThemeViewController.h */,
+				7ADDCD0F1C3CBF4800654B93 /* ThemeViewController.m */,
+				7ADDCD111C3CBFE700654B93 /* ClsaafityViewController.h */,
+				7ADDCD121C3CBFE700654B93 /* ClsaafityViewController.m */,
+				7ADDCD141C3CC07600654B93 /* GoodThemeViewController.h */,
+				7ADDCD151C3CC07600654B93 /* GoodThemeViewController.m */,
+				7ADDCD171C3CC0E900654B93 /* HotViewController.h */,
+				7ADDCD181C3CC0E900654B93 /* HotViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -381,8 +420,15 @@
 				7ABF04351C3A766E009205B6 /* MainTableViewCell.m in Sources */,
 				7ABF03D51C3A1C4B009205B6 /* AppDelegate.m in Sources */,
 				7ABF04241C3A4F2E009205B6 /* DiscoverViewController.m in Sources */,
+				7ADDCD131C3CBFE700654B93 /* ClsaafityViewController.m in Sources */,
 				7ABF04261C3A4F2E009205B6 /* MineViewController.m in Sources */,
+				7ADDCD0D1C3CBE7E00654B93 /* ActivityDetailViewController.m in Sources */,
+				7ADDCD0A1C3CBD9300654B93 /* SearchViewController.m in Sources */,
+				7ADDCD101C3CBF4800654B93 /* ThemeViewController.m in Sources */,
+				7ADDCD191C3CC0E900654B93 /* HotViewController.m in Sources */,
+				7ADDCD161C3CC07600654B93 /* GoodThemeViewController.m in Sources */,
 				7ABF03D21C3A1C4B009205B6 /* main.m in Sources */,
+				7ADDCD071C3CBC1600654B93 /* SelectCityViewController.m in Sources */,
 				7ABF04251C3A4F2E009205B6 /* MainViewController.m in Sources */,
 				7A87446B1C3BA069000228C8 /* MainModel.m in Sources */,
 			);
@@ -428,6 +474,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -469,6 +516,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -487,6 +535,8 @@
 			baseConfigurationReference = A2D7048C9AF3F346ABCDC372 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "/Users/scjy/Desktop/课堂讲解/项目实训/helloPlayWeeks/helloPlayWeeks/playWeeks.pch";
 				INFOPLIST_FILE = helloPlayWeeks/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -500,6 +550,8 @@
 			baseConfigurationReference = F16A3B3AFA7DDD07048C4FB4 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "/Users/scjy/Desktop/课堂讲解/项目实训/helloPlayWeeks/helloPlayWeeks/playWeeks.pch";
 				INFOPLIST_FILE = helloPlayWeeks/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

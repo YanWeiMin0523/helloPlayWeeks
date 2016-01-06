@@ -1,0 +1,28 @@
+//
+//  playWeeks.pch
+//  helloPlayWeeks
+//
+//  Created by scjy on 16/1/5.
+//  Copyright © 2016年 YanWeiMin. All rights reserved.
+//
+
+#ifndef playWeeks_pch
+#define playWeeks_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+//屏幕宽高
+#define kWidth [UIScreen mainScreen].bounds.size.width
+#define kHeight [UIScreen mainScreen].bounds.size.height
+
+
+#ifdef DEBUG
+#	define YWMLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#	define DLog(...)
+#endif
+
+#import "PWDefine.h"
+
+#endif /* playWeeks_pch */

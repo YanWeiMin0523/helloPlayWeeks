@@ -28,7 +28,15 @@
     [self.activityImage sd_setImageWithURL:[NSURL URLWithString:mainMOdel.image_big] placeholderImage:nil];
     self.activityNameLabel.text = mainMOdel.title;
     self.priceLabel.text = mainMOdel.price;
-    
+    //隐藏不需要的控件
+    if ([mainMOdel.type intValue] == RecommandTypeActivity) {
+        self.activityBtn.hidden = NO;
+        self.activityNameLabel.hidden = NO;
+
+    }else{
+        self.activityBtn.hidden = YES;
+        self.activityNameLabel.hidden = YES;
+    }
     
 }
 
