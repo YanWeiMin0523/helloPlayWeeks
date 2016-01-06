@@ -28,6 +28,7 @@
 		7ADDCD131C3CBFE700654B93 /* ClsaafityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADDCD121C3CBFE700654B93 /* ClsaafityViewController.m */; };
 		7ADDCD161C3CC07600654B93 /* GoodThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADDCD151C3CC07600654B93 /* GoodThemeViewController.m */; };
 		7ADDCD191C3CC0E900654B93 /* HotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADDCD181C3CC0E900654B93 /* HotViewController.m */; };
+		7ADDCD3F1C3D202B00654B93 /* UIViewController+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADDCD3E1C3D202B00654B93 /* UIViewController+Common.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,8 @@
 		7ADDCD151C3CC07600654B93 /* GoodThemeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodThemeViewController.m; sourceTree = "<group>"; };
 		7ADDCD171C3CC0E900654B93 /* HotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotViewController.h; sourceTree = "<group>"; };
 		7ADDCD181C3CC0E900654B93 /* HotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotViewController.m; sourceTree = "<group>"; };
+		7ADDCD3D1C3D202B00654B93 /* UIViewController+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Common.h"; path = "../Classes/Main/Controllers/UIViewController+Common.h"; sourceTree = "<group>"; };
+		7ADDCD3E1C3D202B00654B93 /* UIViewController+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Common.m"; path = "../Classes/Main/Controllers/UIViewController+Common.m"; sourceTree = "<group>"; };
 		A2D7048C9AF3F346ABCDC372 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F16A3B3AFA7DDD07048C4FB4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,6 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				7ADDCD041C3CB30A00654B93 /* PWDefine.h */,
+				7ADDCD3D1C3D202B00654B93 /* UIViewController+Common.h */,
+				7ADDCD3E1C3D202B00654B93 /* UIViewController+Common.m */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -430,6 +435,7 @@
 				7ABF03D21C3A1C4B009205B6 /* main.m in Sources */,
 				7ADDCD071C3CBC1600654B93 /* SelectCityViewController.m in Sources */,
 				7ABF04251C3A4F2E009205B6 /* MainViewController.m in Sources */,
+				7ADDCD3F1C3D202B00654B93 /* UIViewController+Common.m in Sources */,
 				7A87446B1C3BA069000228C8 /* MainModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

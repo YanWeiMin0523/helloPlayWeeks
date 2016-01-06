@@ -1,5 +1,5 @@
 //
-//  ActivityDetailViewController.h
+//  UIViewController+Common.h
 //  helloPlayWeeks
 //
 //  Created by scjy on 16/1/6.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ActivityDetailViewController : UIViewController
-@property(nonatomic, copy) NSString *activityID;
+@interface UIViewController (Common)
+
+- (void)showBackButton;
+
 @end
