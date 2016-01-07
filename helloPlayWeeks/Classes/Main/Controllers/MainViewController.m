@@ -124,8 +124,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        ActivityDetailViewController *activityVC = [[ActivityDetailViewController alloc] init];
-        
+        UIStoryboard *activityStory = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        ActivityDetailViewController *activityVC = [activityStory instantiateViewControllerWithIdentifier:@"ActivityDetailVC"];
+         //活动id
+        MainModel *model = self.listArray[indexPath.section][indexPath.row];
+        activityVC.activityID = model.activityID;
         [self.navigationController pushViewController:activityVC animated:YES];
     }else{
         ThemeViewController *themeVC = [[ThemeViewController alloc] init];

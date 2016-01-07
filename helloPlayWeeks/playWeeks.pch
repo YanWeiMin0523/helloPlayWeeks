@@ -23,7 +23,10 @@
 #	define DLog(...)
 #endif
 
+#import <UIKit/UIKit.h>
 #import "PWDefine.h"
 #import "UIViewController+Common.h"
+#import "HWTools.h"
+#import "UIView+UIViewExtension.h"
 
 #endif /* playWeeks_pch */

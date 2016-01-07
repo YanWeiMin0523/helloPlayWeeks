@@ -29,6 +29,8 @@
 		7ADDCD161C3CC07600654B93 /* GoodThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADDCD151C3CC07600654B93 /* GoodThemeViewController.m */; };
 		7ADDCD191C3CC0E900654B93 /* HotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADDCD181C3CC0E900654B93 /* HotViewController.m */; };
 		7ADDCD3F1C3D202B00654B93 /* UIViewController+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADDCD3E1C3D202B00654B93 /* UIViewController+Common.m */; };
+		7AECDE2C1C3E4C2E009C448E /* HWTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AECDE2B1C3E4C2E009C448E /* HWTools.m */; };
+		7AECDE2F1C3E5B0D009C448E /* UIView+UIViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AECDE2E1C3E5B0D009C448E /* UIView+UIViewExtension.m */; };
 		7AF0E6261C3E10D7005725C6 /* ActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0E6251C3E10D7005725C6 /* ActivityView.m */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +75,10 @@
 		7ADDCD181C3CC0E900654B93 /* HotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotViewController.m; sourceTree = "<group>"; };
 		7ADDCD3D1C3D202B00654B93 /* UIViewController+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Common.h"; path = "../Classes/Main/Controllers/UIViewController+Common.h"; sourceTree = "<group>"; };
 		7ADDCD3E1C3D202B00654B93 /* UIViewController+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Common.m"; path = "../Classes/Main/Controllers/UIViewController+Common.m"; sourceTree = "<group>"; };
+		7AECDE2A1C3E4C2E009C448E /* HWTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWTools.h; sourceTree = "<group>"; };
+		7AECDE2B1C3E4C2E009C448E /* HWTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTools.m; sourceTree = "<group>"; };
+		7AECDE2D1C3E5B0D009C448E /* UIView+UIViewExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIViewExtension.h"; sourceTree = "<group>"; };
+		7AECDE2E1C3E5B0D009C448E /* UIView+UIViewExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIViewExtension.m"; sourceTree = "<group>"; };
 		7AF0E6241C3E10D7005725C6 /* ActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityView.h; sourceTree = "<group>"; };
 		7AF0E6251C3E10D7005725C6 /* ActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityView.m; sourceTree = "<group>"; };
 		A2D7048C9AF3F346ABCDC372 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -149,6 +155,10 @@
 				7ADDCD041C3CB30A00654B93 /* PWDefine.h */,
 				7ADDCD3D1C3D202B00654B93 /* UIViewController+Common.h */,
 				7ADDCD3E1C3D202B00654B93 /* UIViewController+Common.m */,
+				7AECDE2A1C3E4C2E009C448E /* HWTools.h */,
+				7AECDE2B1C3E4C2E009C448E /* HWTools.m */,
+				7AECDE2D1C3E5B0D009C448E /* UIView+UIViewExtension.h */,
+				7AECDE2E1C3E5B0D009C448E /* UIView+UIViewExtension.m */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -427,6 +437,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AECDE2C1C3E4C2E009C448E /* HWTools.m in Sources */,
 				7ABF04351C3A766E009205B6 /* MainTableViewCell.m in Sources */,
 				7AF0E6261C3E10D7005725C6 /* ActivityView.m in Sources */,
 				7ABF03D51C3A1C4B009205B6 /* AppDelegate.m in Sources */,
@@ -435,6 +446,7 @@
 				7ABF04261C3A4F2E009205B6 /* MineViewController.m in Sources */,
 				7ADDCD0D1C3CBE7E00654B93 /* ActivityDetailViewController.m in Sources */,
 				7ADDCD0A1C3CBD9300654B93 /* SearchViewController.m in Sources */,
+				7AECDE2F1C3E5B0D009C448E /* UIView+UIViewExtension.m in Sources */,
 				7ADDCD101C3CBF4800654B93 /* ThemeViewController.m in Sources */,
 				7ADDCD191C3CC0E900654B93 /* HotViewController.m in Sources */,
 				7ADDCD161C3CC07600654B93 /* GoodThemeViewController.m in Sources */,

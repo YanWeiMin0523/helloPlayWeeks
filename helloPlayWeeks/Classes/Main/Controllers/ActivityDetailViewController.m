@@ -11,6 +11,10 @@
 #import "MBProgressHUD.h"
 #import "ActivityView.h"
 @interface ActivityDetailViewController ()
+{
+    NSString *_phoneNum;
+}
+
 @property (strong, nonatomic) IBOutlet ActivityView *activityDetialView;
 
 
@@ -24,6 +28,14 @@
     self.navigationItem.title = @"活动详情";    
     //添加类目之后引入的方法
     [self showBackButton];
+    
+    //去地图页面
+    self.activityDetialView.bankBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [self.activityDetialView.bankBtn addTarget:self action:@selector(gotoMakeMap:) forControlEvents:UIControlEventTouchUpInside];
+    //打电话
+    self.activityDetialView.makeCallBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [self.activityDetialView.makeCallBtn addTarget:self action:@selector(gotoMakeCall:) forControlEvents:UIControlEventTouchUpInside];
+    
     
     
     [self getModel];
@@ -46,6 +58,14 @@
         if ([status isEqualToString:@"success"] && code == 0) {
             NSDictionary *successDic = dic[@"success"];
             self.activityDetialView.dateDic = successDic;
+            //获取电话号码
+            _phoneNum = successDic[@"tel"];
+            //获取特色描述
+            
+            
+            
+            
+            
         }else{
         
             
@@ -57,6 +77,22 @@
     }];
     
     
+    
+}
+
+//点击事件
+- (void)gotoMakeCall:(UIButton *)btn{
+    //程序外打电话，之后返回应用程序
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", _phoneNum]]];
+    
+    //程序内打电话，之后不反悔当前应用程序
+    UIWebView *cellPhone = [[UIWebView alloc] init];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", _phoneNum]]];
+    [cellPhone loadRequest:request];
+    [self.view addSubview:cellPhone];
+}
+- (void)gotoMakeMap:(UIButton *)btn{
     
 }
 
