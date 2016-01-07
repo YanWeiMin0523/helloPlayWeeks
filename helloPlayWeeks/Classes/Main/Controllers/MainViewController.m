@@ -23,6 +23,8 @@
     int timerCount;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+
 //全部列表数据
 @property(nonatomic, strong) NSMutableArray *listArray;
 //推荐专题数据
@@ -317,7 +319,9 @@
     //从数组中的字典去吃type类型
     NSString *type = self.adArray[btn.tag - 1][@"type"];
     if ([type integerValue] == 1) {
-    ActivityDetailViewController *activityVC = [[ActivityDetailViewController alloc] init];
+        UIStoryboard *mainStory = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ActivityDetailViewController *activityVC = [mainStory instantiateViewControllerWithIdentifier:@"ActivityDetailVC"];
+        
         //controller产值
         activityVC.activityID = self.adArray[btn.tag - 1][@"id"];
         [self.navigationController pushViewController:activityVC animated:YES];

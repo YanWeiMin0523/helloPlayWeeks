@@ -9,8 +9,10 @@
 #import "ActivityDetailViewController.h"
 #import "AFHTTPSessionManager.h"
 #import "MBProgressHUD.h"
-
+#import "ActivityView.h"
 @interface ActivityDetailViewController ()
+@property (strong, nonatomic) IBOutlet ActivityView *activityDetialView;
+
 
 @end
 
@@ -19,15 +21,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationItem.title = @"活动详情";
-    self.view.backgroundColor = [UIColor lightGrayColor];
-    
+    self.navigationItem.title = @"活动详情";    
     //添加类目之后引入的方法
     [self showBackButton];
-    
-    
-    
-    
     
     
     [self getModel];
@@ -44,7 +40,17 @@
         YWMLog(@"%@", downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
-        YWMLog(@"responseObject = %@", responseObject);
+        NSDictionary *dic = responseObject;
+        NSString *status = dic[@"status"];
+        NSInteger code = [dic[@"code"] integerValue];
+        if ([status isEqualToString:@"success"] && code == 0) {
+            NSDictionary *successDic = dic[@"success"];
+            self.activityDetialView.dateDic = successDic;
+        }else{
+        
+            
+        }
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         YWMLog(@"error = %@", error);

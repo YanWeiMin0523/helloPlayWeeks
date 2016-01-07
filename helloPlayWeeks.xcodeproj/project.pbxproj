@@ -29,6 +29,7 @@
 		7ADDCD161C3CC07600654B93 /* GoodThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADDCD151C3CC07600654B93 /* GoodThemeViewController.m */; };
 		7ADDCD191C3CC0E900654B93 /* HotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADDCD181C3CC0E900654B93 /* HotViewController.m */; };
 		7ADDCD3F1C3D202B00654B93 /* UIViewController+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADDCD3E1C3D202B00654B93 /* UIViewController+Common.m */; };
+		7AF0E6261C3E10D7005725C6 /* ActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0E6251C3E10D7005725C6 /* ActivityView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,8 @@
 		7ADDCD181C3CC0E900654B93 /* HotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotViewController.m; sourceTree = "<group>"; };
 		7ADDCD3D1C3D202B00654B93 /* UIViewController+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Common.h"; path = "../Classes/Main/Controllers/UIViewController+Common.h"; sourceTree = "<group>"; };
 		7ADDCD3E1C3D202B00654B93 /* UIViewController+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Common.m"; path = "../Classes/Main/Controllers/UIViewController+Common.m"; sourceTree = "<group>"; };
+		7AF0E6241C3E10D7005725C6 /* ActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityView.h; sourceTree = "<group>"; };
+		7AF0E6251C3E10D7005725C6 /* ActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityView.m; sourceTree = "<group>"; };
 		A2D7048C9AF3F346ABCDC372 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F16A3B3AFA7DDD07048C4FB4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -240,6 +243,8 @@
 			isa = PBXGroup;
 			children = (
 				7ABF04281C3A505F009205B6 /* Main.storyboard */,
+				7AF0E6241C3E10D7005725C6 /* ActivityView.h */,
+				7AF0E6251C3E10D7005725C6 /* ActivityView.m */,
 				7ABF04321C3A766E009205B6 /* MainTableViewCell.h */,
 				7ABF04331C3A766E009205B6 /* MainTableViewCell.m */,
 				7ABF04341C3A766E009205B6 /* MainTableViewCell.xib */,
@@ -423,6 +428,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7ABF04351C3A766E009205B6 /* MainTableViewCell.m in Sources */,
+				7AF0E6261C3E10D7005725C6 /* ActivityView.m in Sources */,
 				7ABF03D51C3A1C4B009205B6 /* AppDelegate.m in Sources */,
 				7ABF04241C3A4F2E009205B6 /* DiscoverViewController.m in Sources */,
 				7ADDCD131C3CBFE700654B93 /* ClsaafityViewController.m in Sources */,
