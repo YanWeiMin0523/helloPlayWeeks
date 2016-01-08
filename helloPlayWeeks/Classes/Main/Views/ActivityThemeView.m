@@ -35,7 +35,6 @@
     [self.mainScrollView addSubview:self.headerImage];
     
     
-    
 }
 
 
@@ -45,6 +44,7 @@
 - (UIScrollView *)mainScrollView{
     if (!_mainScrollView) {
         self.mainScrollView = [[UIScrollView alloc] initWithFrame:self.frame];
+        self.mainScrollView.backgroundColor = [UIColor whiteColor];
     }
     return _mainScrollView;
 }
@@ -107,9 +107,9 @@
                     if (lastImageBootm == 0.0) {
                         if (title != nil) {
                             //有title的加上title的label高度
-                            imageY = _previonsImageBottom + label.height + 30 + 5;
+                            imageY = _previonsImageBottom + label.height + 30 + 10;
                         }else{
-                            imageY = _previonsImageBottom + label.height + 5;
+                            imageY = _previonsImageBottom + label.height + 10;
                         }
                     }else{
                         imageY = lastImageBootm + 10;
@@ -124,7 +124,7 @@
                 UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(5, imageY, kWidth - 10, (kWidth - 10) / width * imageHeight)];
                 [imageView sd_setImageWithURL:[NSURL URLWithString:urlDic[@"url"]] placeholderImage:nil];
                 //每一次都保留图片底部的高度
-                _previonsImageBottom = imageView.bottom + 5;
+                _previonsImageBottom = imageView.bottom + 10;
                 [self.mainScrollView addSubview:imageView];
                 if (urlArray.count > 1) {
                     lastImageBootm = imageView.bottom;

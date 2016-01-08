@@ -43,11 +43,10 @@
     AFHTTPSessionManager *httpManager = [AFHTTPSessionManager manager];
     httpManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [httpManager GET:[NSString stringWithFormat:@"%@&id=%@", kActivityTheme, self.themeID] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         YWMLog(@"%@", downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+
         NSDictionary *dic = responseObject;
         NSString *status = dic[@"status"];
         NSInteger code = [dic[@"code"] integerValue];
@@ -64,7 +63,6 @@
         
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         YWMLog(@"%@", error);
     }];
     

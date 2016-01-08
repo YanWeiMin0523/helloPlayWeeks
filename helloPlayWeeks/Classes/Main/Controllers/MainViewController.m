@@ -61,7 +61,7 @@
     
     
     //请求网络
-    [self requstModel];
+//    [self requstModel];
     
     [self configTableViewHiderView];
     
@@ -191,7 +191,7 @@
         NSString *imageStr = [NSString stringWithFormat:@"home_icon_%02d", i + 1];
         [btn setImage:[UIImage imageNamed:imageStr] forState:UIControlStateNormal];
         btn.tag = 1 + i;
-        [btn addTarget:self action:@selector(mainGoodActivityAction:) forControlEvents:UIControlEventTouchUpInside];
+        [btn addTarget:self action:@selector(mainActivityAction:) forControlEvents:UIControlEventTouchUpInside];
         [tableViewHeader addSubview:btn];
 
     }
@@ -201,8 +201,8 @@
         btn.frame = CGRectMake(kWidth / 2 * i, 186 + kWidth / 4, kWidth / 2, 343 - 186 - kWidth / 4);
         NSString *imageStr = [NSString stringWithFormat:@"home_%02d", i];
         [btn setImage:[UIImage imageNamed:imageStr] forState:UIControlStateNormal];
-        btn.tag = 1 + i;
-        [btn addTarget:self action:@selector(mainActivityAction:) forControlEvents:UIControlEventTouchUpInside];
+        btn.tag = 100 + i;
+        [btn addTarget:self action:@selector(mainGoodActivityAction:) forControlEvents:UIControlEventTouchUpInside];
         [tableViewHeader addSubview:btn];
     }
     
@@ -383,8 +383,8 @@
     
 }
 //精选活动&热门专题
-- (void)mainGoodActivityAction:(UIButton *)btn{
-    if (btn.tag == 1) {
+- (void)mainGoodActivityAction:(UIButton *)button{
+    if (button.tag == 100) {
         GoodThemeViewController *goodVC = [[GoodThemeViewController alloc] init];
         [self.navigationController pushViewController:goodVC animated:YES];
     }else{
