@@ -52,14 +52,10 @@
         NSInteger code = [dic[@"code"] integerValue];
         if ([status isEqualToString:@"success"] && code == 0) {
             self.themeView.dataDic = dic[@"success"];
+
             self.navigationItem.title = dic[@"success"][@"title"];
             
-        }else{
-            
-            
-            
         }
-        
         
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

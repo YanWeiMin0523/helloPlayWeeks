@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GoodModel.h"
 
 @interface GoodThemeViewController : UIViewController
+
+@property(nonatomic, strong) GoodModel *model;
 
 @end

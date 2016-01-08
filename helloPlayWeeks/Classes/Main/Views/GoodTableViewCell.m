@@ -8,6 +8,7 @@
 
 #import "GoodTableViewCell.h"
 #import "GoodModel.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 @interface GoodTableViewCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *headImage;
 @property (weak, nonatomic) IBOutlet UIImageView *ageBgImage;
@@ -29,7 +30,12 @@
 }
 
 - (void)setGoodModel:(GoodModel *)goodModel{
+    NSLog(@"%@",goodModel.title);
     
+    self.titleLabel.text = goodModel.title;
+    self.priceLabel.text = goodModel.price;
+    self.ageLabel.text = goodModel.age;
+    [self.headImage sd_setImageWithURL:[NSURL URLWithString:goodModel.image] placeholderImage:nil];
     
     
 }

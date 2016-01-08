@@ -38,9 +38,9 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18j-Pt-igY">
-                        <rect key="frame" x="313" y="51" width="54" height="30"/>
-                        <state key="normal" title="Button"/>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18j-Pt-igY">
+                        <rect key="frame" x="309" y="55" width="62" height="22"/>
+                        <state key="normal" title="Button" image="list_like_heart"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snR-rW-TsQ">
                         <rect key="frame" x="91" y="30" width="82" height="29"/>
@@ -64,5 +64,6 @@
     </objects>
     <resources>
         <image name="age_bg" width="25" height="12"/>
+        <image name="list_like_heart" width="25" height="25"/>
     </resources>
 </document>

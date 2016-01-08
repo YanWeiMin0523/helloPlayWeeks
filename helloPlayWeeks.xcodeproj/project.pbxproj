@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		234D2F041FB255FA92FAF68E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B52C5D701A3690D8F42AB1D /* libPods.a */; };
-		7A1329EE1C3F58530079A654 /* Theme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A1329ED1C3F58530079A654 /* Theme.plist */; };
 		7A1329F11C3F60790079A654 /* ActivityThemeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1329F01C3F60790079A654 /* ActivityThemeView.m */; };
 		7A3975F11C3F9DF4004FE794 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A3975ED1C3F9DF4004FE794 /* blueArrow.png */; };
 		7A3975F21C3F9DF4004FE794 /* blueArrowDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A3975EE1C3F9DF4004FE794 /* blueArrowDown.png */; };
@@ -44,7 +43,6 @@
 
 /* Begin PBXFileReference section */
 		0B52C5D701A3690D8F42AB1D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A1329ED1C3F58530079A654 /* Theme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Theme.plist; sourceTree = "<group>"; };
 		7A1329EF1C3F60790079A654 /* ActivityThemeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityThemeView.h; sourceTree = "<group>"; };
 		7A1329F01C3F60790079A654 /* ActivityThemeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityThemeView.m; sourceTree = "<group>"; };
 		7A3975ED1C3F9DF4004FE794 /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
@@ -292,7 +290,6 @@
 				7A3975F61C3FA3BB004FE794 /* GoodTableViewCell.xib */,
 				7AF0E6241C3E10D7005725C6 /* ActivityView.h */,
 				7AF0E6251C3E10D7005725C6 /* ActivityView.m */,
-				7A1329ED1C3F58530079A654 /* Theme.plist */,
 				7ABF04321C3A766E009205B6 /* MainTableViewCell.h */,
 				7ABF04331C3A766E009205B6 /* MainTableViewCell.m */,
 				7ABF04341C3A766E009205B6 /* MainTableViewCell.xib */,
@@ -422,7 +419,6 @@
 				7A3975F81C3FA3BB004FE794 /* GoodTableViewCell.xib in Resources */,
 				7ABF042B1C3A5082009205B6 /* Mine.storyboard in Resources */,
 				7A3975F21C3F9DF4004FE794 /* blueArrowDown.png in Resources */,
-				7A1329EE1C3F58530079A654 /* Theme.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

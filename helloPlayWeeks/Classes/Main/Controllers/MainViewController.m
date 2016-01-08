@@ -258,10 +258,7 @@
             self.navigationItem.leftBarButtonItem.title = cityName;
             
             
-        }else{
-            
-        }
-        
+        }        
         
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

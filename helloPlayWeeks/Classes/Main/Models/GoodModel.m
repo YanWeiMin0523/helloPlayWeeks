@@ -13,6 +13,7 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dict{
     self = [super init];
     if (self) {
+        
         self.image = dict[@"image"];
         self.title = dict[@"title"];
         self.age = dict[@"age"];

@@ -10,12 +10,14 @@
 #import "PullingRefreshTableView.h"
 #import "GoodTableViewCell.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
+#import "ActivityDetailViewController.h"
 @interface GoodThemeViewController ()<UITableViewDataSource, UITableViewDelegate, PullingRefreshTableViewDelegate>
 {
     NSInteger _pageCount;  //请求的页码
 }
 @property(nonatomic, assign) BOOL refreshing;
 @property(nonatomic, strong) PullingRefreshTableView *tableView;
+@property(nonatomic, strong) NSMutableArray *adArray;
 
 @end
 
@@ -31,25 +33,28 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"GoodTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     [self.tableView launchRefreshing];
     [self.view addSubview:self.tableView];
+    
 }
 
 
 
 #pragma mark -------  UITableViewDataSource 代理方法
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    [self loadingData];
+    return self.adArray.count;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     GoodTableViewCell *goodCell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    
-    
+    goodCell.goodModel = self.adArray[indexPath.row];
     return goodCell;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 20;
-}
-
-
 #pragma mark --------- UITableViewDelegate 代理方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    ActivityDetailViewController *activityVC = [[ActivityDetailViewController alloc] init];
+  
+    [self.navigationController pushViewController:activityVC animated:YES];
     
 }
 
@@ -61,6 +66,8 @@
         self.tableView.dataSource = self;
         self.tableView.delegate = self;
         self.tableView.rowHeight = 90;
+        self.tableView.backgroundColor = [UIColor whiteColor];
+        
     }
     return _tableView;
 }
@@ -89,9 +96,6 @@
 //下拉刷新加载数据
 - (void)loadingData{
     
-    //完成加载
-    [self.tableView tableViewDidFinishedLoading];
-    self.tableView.reachedTheEnd = NO;
     
     //数据获取
     AFHTTPSessionManager *httpManager = [AFHTTPSessionManager manager];
@@ -100,8 +104,22 @@
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dic = responseObject;
-        
-        
+        NSInteger code = [dic[@"code"] integerValue];
+        NSString *status = dic[@"status"];
+        if ([status isEqualToString:@"success"] && code == 0) {
+            NSDictionary *successDic = dic[@"success"];
+            NSArray *array = successDic[@"acData"];
+            for (NSDictionary *dict in array) {
+                GoodModel *model = [[GoodModel alloc] initWithDictionary:dict];
+                [self.adArray addObject:model];
+                NSLog(@"%@",self.adArray);
+            }
+            //完成加载
+            [self.tableView tableViewDidFinishedLoading];
+            self.tableView.reachedTheEnd = NO;
+            //刷新tableView数据
+            [self.tableView reloadData];
+    }
         
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -114,6 +132,7 @@
 //手指开始拖动
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     [self.tableView tableViewDidScroll:scrollView];
+    
 }
 
 //手指结束拖动
@@ -121,6 +140,15 @@
     [self.tableView tableViewDidEndDragging:scrollView];
     
 }
+
+#pragma mark ------ 懒加载
+- (NSMutableArray *)adArray{
+    if (!_adArray) {
+        self.adArray = [NSMutableArray new];
+    }
+    return _adArray;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
