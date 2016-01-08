@@ -28,5 +28,6 @@
 #import "UIViewController+Common.h"
 #import "HWTools.h"
 #import "UIView+UIViewExtension.h"
+#import "AppDelegate.h"
 
 #endif /* playWeeks_pch */

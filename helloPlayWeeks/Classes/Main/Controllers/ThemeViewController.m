@@ -7,17 +7,72 @@
 //
 
 #import "ThemeViewController.h"
-
+#import "playWeeks.pch"
+#import <AFNetworking/AFHTTPSessionManager.h>
+#import "MBProgressHUD.h"
+#import "ActivityThemeView.h"
 @interface ThemeViewController ()
+
+@property(nonatomic, strong) ActivityThemeView *themeView;
 
 @end
 
 @implementation ThemeViewController
 
+- (void)loadView{
+    [super loadView];
+    self.themeView = [[ActivityThemeView alloc] initWithFrame:self.view.frame];
+    self.view = self.themeView;
+    //网络请求
+    [self getModel];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    //调用返回按钮
+    [self showBackButton];
+    //隐藏tabBar
+    self.tabBarController.tabBar.hidden = YES;
+    
 }
+
+#pragma mark -------  Custom Method
+- (void)getModel{
+    AFHTTPSessionManager *httpManager = [AFHTTPSessionManager manager];
+    httpManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [httpManager GET:[NSString stringWithFormat:@"%@&id=%@", kActivityTheme, self.themeID] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        YWMLog(@"%@", downloadProgress);
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        NSDictionary *dic = responseObject;
+        NSString *status = dic[@"status"];
+        NSInteger code = [dic[@"code"] integerValue];
+        if ([status isEqualToString:@"success"] && code == 0) {
+            self.themeView.dataDic = dic[@"success"];
+            self.navigationItem.title = dic[@"success"][@"title"];
+            
+        }else{
+            
+            
+            
+        }
+        
+        
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        YWMLog(@"%@", error);
+    }];
+    
+    
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

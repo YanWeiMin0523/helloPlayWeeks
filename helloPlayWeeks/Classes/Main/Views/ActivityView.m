@@ -84,7 +84,7 @@
         label.font = [UIFont systemFontOfSize:15.0];
         label.numberOfLines = 0;
         [self.mainScrollerView addSubview:label];
-        //保留最后一个label的高度，+64是下边的tabBar的高度
+        //保留最后一个label的高度
           _lastLabelBottom = label.bottom + 10 + 64;
           
         NSArray *urlArray = dic[@"urls"];

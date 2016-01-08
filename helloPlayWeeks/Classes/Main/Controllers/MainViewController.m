@@ -7,10 +7,10 @@
 //
 
 #import "MainViewController.h"
+#import "playWeeks.pch"
 #import "MainTableViewCell.h"
 #import "MainModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "playWeeks.pch"
 #import "SelectCityViewController.h"
 #import "SearchViewController.h"
 #import "ActivityDetailViewController.h"
@@ -123,16 +123,17 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+     MainModel *model = self.listArray[indexPath.section][indexPath.row];
     if (indexPath.section == 0) {
         UIStoryboard *activityStory = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         ActivityDetailViewController *activityVC = [activityStory instantiateViewControllerWithIdentifier:@"ActivityDetailVC"];
          //活动id
-        MainModel *model = self.listArray[indexPath.section][indexPath.row];
+       
         activityVC.activityID = model.activityID;
         [self.navigationController pushViewController:activityVC animated:YES];
     }else{
         ThemeViewController *themeVC = [[ThemeViewController alloc] init];
-        
+        themeVC.themeID = model.activityID;
         [self.navigationController pushViewController:themeVC animated:YES];
         
     }
@@ -324,13 +325,13 @@
     if ([type integerValue] == 1) {
         UIStoryboard *mainStory = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ActivityDetailViewController *activityVC = [mainStory instantiateViewControllerWithIdentifier:@"ActivityDetailVC"];
-        
         //controller产值
         activityVC.activityID = self.adArray[btn.tag - 1][@"id"];
         [self.navigationController pushViewController:activityVC animated:YES];
     }else{
-        HotViewController *hotVC = [[HotViewController alloc] init];
-        [self.navigationController pushViewController:hotVC animated:YES];
+        ThemeViewController *themeVC = [[ThemeViewController alloc] init];
+        themeVC.themeID = self.adArray[btn.tag - 1][@"id"];
+        [self.navigationController pushViewController:themeVC animated:YES];
     }
 }
 
@@ -346,12 +347,14 @@
 //定时器方法 每一秒执行一次，图片自动轮播
 - (void)timerAction:(NSTimer *)timer{
     //把page当前页加1
+    //self.adArray.count数组元素个诉可能为0，打不过对0取余的时候无意义
+    if (self.adArray.count > 0) {
     NSInteger rollPage = (self.pageControl.currentPage+ 1)% self.adArray.count;
     self.pageControl.currentPage = rollPage;
     //计算scrollView应该滚动x轴坐标
     CGFloat offset = _pageControl.currentPage * kWidth;
     [self.scrollView setContentOffset:CGPointMake(offset, 0) animated:YES];
-    
+    }
 }
 
 //当手动去滑动scrollView的时候，定时器依然在计算时间，可能我们刚刚滑动到下一页，定时器有刚好触发，导致当前页停留不到2秒
@@ -423,6 +426,12 @@
 }
 
 
+//在堆栈中再次调用以前页面时，调用次方法
+- (void)viewWillAppear:(BOOL)animated{
+    [self viewDidAppear:YES];
+    //取消隐藏tabBar
+    self.tabBarController.tabBar.hidden = NO;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

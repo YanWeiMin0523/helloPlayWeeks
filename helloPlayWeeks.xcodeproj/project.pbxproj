@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		234D2F041FB255FA92FAF68E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B52C5D701A3690D8F42AB1D /* libPods.a */; };
+		7A1329EE1C3F58530079A654 /* Theme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A1329ED1C3F58530079A654 /* Theme.plist */; };
+		7A1329F11C3F60790079A654 /* ActivityThemeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1329F01C3F60790079A654 /* ActivityThemeView.m */; };
 		7A87446B1C3BA069000228C8 /* MainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A87446A1C3BA069000228C8 /* MainModel.m */; };
 		7ABF03D21C3A1C4B009205B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABF03D11C3A1C4B009205B6 /* main.m */; };
 		7ABF03D51C3A1C4B009205B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABF03D41C3A1C4B009205B6 /* AppDelegate.m */; };
@@ -36,6 +38,9 @@
 
 /* Begin PBXFileReference section */
 		0B52C5D701A3690D8F42AB1D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A1329ED1C3F58530079A654 /* Theme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Theme.plist; sourceTree = "<group>"; };
+		7A1329EF1C3F60790079A654 /* ActivityThemeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityThemeView.h; sourceTree = "<group>"; };
+		7A1329F01C3F60790079A654 /* ActivityThemeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityThemeView.m; sourceTree = "<group>"; };
 		7A8744691C3BA069000228C8 /* MainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainModel.h; sourceTree = "<group>"; };
 		7A87446A1C3BA069000228C8 /* MainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainModel.m; sourceTree = "<group>"; };
 		7A87448D1C3BFA19000228C8 /* playWeeks.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = playWeeks.pch; sourceTree = "<group>"; };
@@ -255,9 +260,12 @@
 				7ABF04281C3A505F009205B6 /* Main.storyboard */,
 				7AF0E6241C3E10D7005725C6 /* ActivityView.h */,
 				7AF0E6251C3E10D7005725C6 /* ActivityView.m */,
+				7A1329ED1C3F58530079A654 /* Theme.plist */,
 				7ABF04321C3A766E009205B6 /* MainTableViewCell.h */,
 				7ABF04331C3A766E009205B6 /* MainTableViewCell.m */,
 				7ABF04341C3A766E009205B6 /* MainTableViewCell.xib */,
+				7A1329EF1C3F60790079A654 /* ActivityThemeView.h */,
+				7A1329F01C3F60790079A654 /* ActivityThemeView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -379,6 +387,7 @@
 				7ABF042D1C3A50C5009205B6 /* Discover.storyboard in Resources */,
 				7ABF03DA1C3A1C4B009205B6 /* LaunchScreen.storyboard in Resources */,
 				7ABF042B1C3A5082009205B6 /* Mine.storyboard in Resources */,
+				7A1329EE1C3F58530079A654 /* Theme.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +457,7 @@
 				7ADDCD0A1C3CBD9300654B93 /* SearchViewController.m in Sources */,
 				7AECDE2F1C3E5B0D009C448E /* UIView+UIViewExtension.m in Sources */,
 				7ADDCD101C3CBF4800654B93 /* ThemeViewController.m in Sources */,
+				7A1329F11C3F60790079A654 /* ActivityThemeView.m in Sources */,
 				7ADDCD191C3CC0E900654B93 /* HotViewController.m in Sources */,
 				7ADDCD161C3CC07600654B93 /* GoodThemeViewController.m in Sources */,
 				7ABF03D21C3A1C4B009205B6 /* main.m in Sources */,

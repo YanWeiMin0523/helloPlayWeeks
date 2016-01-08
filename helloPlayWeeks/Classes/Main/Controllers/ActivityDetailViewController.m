@@ -1,7 +1,7 @@
 //
 //  ActivityDetailViewController.m
 //  helloPlayWeeks
-//
+//  活动详情
 //  Created by scjy on 16/1/6.
 //  Copyright © 2016年 YanWeiMin. All rights reserved.
 //
@@ -28,6 +28,8 @@
     self.navigationItem.title = @"活动详情";    
     //添加类目之后引入的方法
     [self showBackButton];
+    //隐藏tabBar
+    self.tabBarController.tabBar.hidden = YES;
     
     //去地图页面
     self.activityDetialView.bankBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -63,9 +65,6 @@
             //获取特色描述
             
             
-            
-            
-            
         }else{
         
             
@@ -95,6 +94,7 @@
 - (void)gotoMakeMap:(UIButton *)btn{
     
 }
+
 
 
 - (void)didReceiveMemoryWarning {
