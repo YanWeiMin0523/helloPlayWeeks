@@ -129,7 +129,7 @@
         ActivityDetailViewController *activityVC = [activityStory instantiateViewControllerWithIdentifier:@"ActivityDetailVC"];
          //活动id
        
-        activityVC.activityID = model.activityID;
+        activityVC.actiID = model.activityID;
         [self.navigationController pushViewController:activityVC animated:YES];
     }else{
         ThemeViewController *themeVC = [[ThemeViewController alloc] init];
@@ -190,7 +190,7 @@
         btn.frame = CGRectMake(kWidth / 4 * i, 186, kWidth / 4, kWidth / 4);
         NSString *imageStr = [NSString stringWithFormat:@"home_icon_%02d", i + 1];
         [btn setImage:[UIImage imageNamed:imageStr] forState:UIControlStateNormal];
-        btn.tag = 1 + i;
+        btn.tag = 100 + i;
         [btn addTarget:self action:@selector(mainActivityAction:) forControlEvents:UIControlEventTouchUpInside];
         [tableViewHeader addSubview:btn];
 
@@ -258,7 +258,9 @@
             self.navigationItem.leftBarButtonItem.title = cityName;
             
             
-        }        
+        } else{
+            
+        }
         
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -323,7 +325,7 @@
         UIStoryboard *mainStory = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ActivityDetailViewController *activityVC = [mainStory instantiateViewControllerWithIdentifier:@"ActivityDetailVC"];
         //controller产值
-        activityVC.activityID = self.adArray[btn.tag - 1][@"id"];
+        activityVC.actiID = self.adArray[btn.tag - 1][@"id"];
         [self.navigationController pushViewController:activityVC animated:YES];
     }else{
         ThemeViewController *themeVC = [[ThemeViewController alloc] init];
@@ -375,6 +377,8 @@
 //四个小按钮方法
 - (void)mainActivityAction:(UIButton *)btn{
     ClsaafityViewController *classfityVC = [[ClsaafityViewController alloc] init];
+    
+    classfityVC.classfityType = btn.tag -100 + 1;
     [self.navigationController pushViewController:classfityVC animated:YES];
 
     

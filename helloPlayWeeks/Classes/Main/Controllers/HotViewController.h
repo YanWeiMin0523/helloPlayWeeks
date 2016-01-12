@@ -10,4 +10,5 @@
 
 @interface HotViewController : UIViewController
 
+
 @end

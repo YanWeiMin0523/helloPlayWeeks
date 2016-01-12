@@ -9,7 +9,7 @@
 #import "ThemeViewController.h"
 #import "playWeeks.pch"
 #import <AFNetworking/AFHTTPSessionManager.h>
-#import "MBProgressHUD.h"
+
 #import "ActivityThemeView.h"
 @interface ThemeViewController ()
 
@@ -54,6 +54,8 @@
             self.themeView.dataDic = dic[@"success"];
 
             self.navigationItem.title = dic[@"success"][@"title"];
+            
+        }else{
             
         }
         

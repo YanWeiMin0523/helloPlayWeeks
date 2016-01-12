@@ -14,8 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *ageBgImage;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
-
-@property (weak, nonatomic) IBOutlet UIButton *loveButton;
+@property (weak, nonatomic) IBOutlet UILabel *loveLabel;
 @property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ageLabel;
 
@@ -30,12 +29,14 @@
 }
 
 - (void)setGoodModel:(GoodModel *)goodModel{
-    NSLog(@"%@",goodModel.title);
     
     self.titleLabel.text = goodModel.title;
     self.priceLabel.text = goodModel.price;
     self.ageLabel.text = goodModel.age;
     [self.headImage sd_setImageWithURL:[NSURL URLWithString:goodModel.image] placeholderImage:nil];
+    self.headImage.layer.cornerRadius = 20;
+    self.headImage.clipsToBounds = YES;
+    self.loveLabel.text = [NSString stringWithFormat:@"%@",goodModel.counts];
     
     
 }

@@ -37,9 +37,6 @@
     
 }
 
-
-
-
 #pragma mark ----- 懒加载
 - (UIScrollView *)mainScrollView{
     if (!_mainScrollView) {
@@ -128,14 +125,23 @@
                 [self.mainScrollView addSubview:imageView];
                 if (urlArray.count > 1) {
                     lastImageBootm = imageView.bottom;
+                        
+                    }
                 }
             }
         }
+    if (_lastLabelBottom > _previonsImageBottom) {
+        //重新设置scrollView的可滚动高度
+        self.mainScrollView.contentSize = CGSizeMake(kWidth, _lastLabelBottom);
+
+    }else{
+        //重新设置scrollView的可滚动高度
+        self.mainScrollView.contentSize = CGSizeMake(kWidth, _previonsImageBottom);
+
     }
-    //重新设置scrollView的可滚动高度
-    self.mainScrollView.contentSize = CGSizeMake(kWidth, _lastLabelBottom);
     
 }
+
 
 
 /*

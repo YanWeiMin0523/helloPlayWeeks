@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
 @interface ClsaafityViewController : UIViewController
+@property(nonatomic, assign) ClassfityListType classfityType;
 
 @end

@@ -8,7 +8,7 @@
 
 #import "ActivityDetailViewController.h"
 #import "AFHTTPSessionManager.h"
-#import "MBProgressHUD.h"
+
 #import "ActivityView.h"
 @interface ActivityDetailViewController ()
 {
@@ -47,13 +47,10 @@
 - (void)getModel{
     AFHTTPSessionManager *httpManger = [AFHTTPSessionManager manager];
     httpManger.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [httpManger GET:[NSString stringWithFormat:@"%@&id=%@", kActivityDetail, self.activityID] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [httpManger GET:[NSString stringWithFormat:@"%@&id=%@", kActivityDetail, self.actiID] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
         YWMLog(@"%@", downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
         NSDictionary *dic = responseObject;
         NSString *status = dic[@"status"];
         NSInteger code = [dic[@"code"] integerValue];
@@ -66,12 +63,10 @@
             
             
         }else{
-        
             
         }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
         YWMLog(@"error = %@", error);
     }];
     

@@ -122,11 +122,15 @@
             if (urlArray.count > 1) {
                 lastImageBootm = imageView.bottom;
             }
+           
         }
           }
       }
+    if (_lastLabelBottom > _previonsImageBottom) {
+         self.mainScrollerView.contentSize = CGSizeMake(kWidth, _lastLabelBottom + 30);
+    }
     //重新设置scrollView的可滚动高度
-    self.mainScrollerView.contentSize = CGSizeMake(kWidth, _lastLabelBottom);
+    self.mainScrollerView.contentSize = CGSizeMake(kWidth, _previonsImageBottom + 30);
 
 }
 
