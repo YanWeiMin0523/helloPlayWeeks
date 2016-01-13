@@ -43,14 +43,9 @@
    //选择点击进入哪一个网络请求
     [self chooseRequest];
     [self showSelectButton];
-    [self getFamilyData];
-    [self getShowData];
-    [self getStudyData];
-    [self getTourseData];
     
     //注册cell
     [self.tableView registerNib:[UINib nibWithNibName:@"GoodTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
-    [self.tableView launchRefreshing];
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.VOsegment];
     
@@ -113,6 +108,31 @@
             break;
     }
 }
+//点击上一页按钮，请求响应的数据
+- (void)showSelectButton{
+    if (self.canRefreshing) {  //下拉删除原来数据
+        if (self.showDataArray > 0) {
+            [self.showDataArray removeAllObjects];
+        }
+    }
+    switch (self.classfityType) {
+        case ClassfityListTypeShowRepertoire:
+            self.showDataArray = self.showArray;
+            break;
+        case ClassfityListTypeToursePlace:
+            self.showDataArray = self.touristArray;
+            break;
+        case ClassfityListTypeStudyPUZ:
+            self.showDataArray = self.studyArray;
+            break;
+        case ClassfityListTypeFamilyTravel:
+        self.showDataArray = self.familyArray;
+            break;
+    }
+    [self.tableView reloadData];
+    
+}
+
 
 //获取数据
 - (void)getShowData{
@@ -281,40 +301,6 @@
    
 }
 
-//点击上一页按钮，请求响应的数据
-- (void)showSelectButton{
-    if (self.canRefreshing) {  //下拉删除原来数据
-    if (self.showDataArray > 0) {
-        [self.showDataArray removeAllObjects];
-    }
-    }
-        switch (self.classfityType) {
-            case ClassfityListTypeShowRepertoire:
-            {
-                self.showDataArray = self.showArray;
-            }
-                break;
-            case ClassfityListTypeToursePlace:
-            {
-                self.showDataArray = self.touristArray;
-            }
-                break;
-            case ClassfityListTypeStudyPUZ:
-            {
-                self.showDataArray = self.studyArray;
-                
-            }
-                break;
-            case ClassfityListTypeFamilyTravel:
-            {
-                self.showDataArray = self.familyArray;
-                
-            }
-                break;
-    }
-    [self.tableView reloadData];
-    
-}
 
 //手指开始拖动
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{

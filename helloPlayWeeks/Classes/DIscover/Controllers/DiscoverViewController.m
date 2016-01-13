@@ -81,6 +81,12 @@
     [self.tableView tableViewDidEndDragging:scrollView];
 }
 
+//返回页面的时候不隐藏tabBar
+- (void)viewWillAppear:(BOOL)animated{
+    [self viewDidAppear:YES];
+    self.tabBarController.tabBar.hidden = NO;
+}
+
 - (void)getDateRequest{
     AFHTTPSessionManager *httpManger = [AFHTTPSessionManager manager];
     httpManger.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
