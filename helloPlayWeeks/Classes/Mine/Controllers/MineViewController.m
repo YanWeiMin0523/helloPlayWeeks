@@ -10,6 +10,7 @@
 #import <SDWebImage/SDImageCache.h>
 #import <MessageUI/MessageUI.h>
 #import "ProgressHUD.h"
+#import "ShareView.h"
 @interface MineViewController ()<UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate>
 
 @property(nonatomic, strong) UITableView *tableView;
@@ -17,6 +18,8 @@
 @property(nonatomic, strong) NSArray *imageArray;
 @property(nonatomic, strong) NSMutableArray *titleArray;
 @property(nonatomic, strong) UILabel *nameLabel;
+
+
 @end
 
 @implementation MineViewController
@@ -51,20 +54,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     switch (indexPath.row) {
         case 0:
-        {
-            SDImageCache *imageCache = [SDImageCache sharedImageCache];
-            //清除缓存
-            [imageCache clearDisk];
-            [self.titleArray replaceObjectAtIndex:0 withObject:@"清除缓存"];
-            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-            }
+            [self clearImage];
             break;
         case 1:
-        {
             //用户反馈
             [self sendEmail];
-        }
             break;
         case 2:
         {  //评分
@@ -75,10 +69,8 @@
         }
             break;
         case 3:
-        {
             //分享好友
             [self shareToFriends];
-        }
             break;
         case 4:
         {
@@ -130,8 +122,18 @@
 //点击上部圆形button的方法，进行登陆/注册
 - (void)headAction:(UIButton *)btn{
     
+
     
-    
+}
+
+- (void)clearImage{
+    [ProgressHUD showSuccess:@"已给你清场"];
+    SDImageCache *imageCache = [SDImageCache sharedImageCache];
+    //清除缓存
+    [imageCache clearDisk];
+    [self.titleArray replaceObjectAtIndex:0 withObject:@"清除缓存"];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     
 }
 
@@ -148,7 +150,7 @@
     [mailVC setToRecipients:receiveArray];
     
     //设置发送内容
-    NSString *emailStr = @"Please leave your valuable opinions";
+    NSString *emailStr = @"Please leave your valuable opinions!";
     [mailVC setMessageBody:emailStr isHTML:NO];
     
     //推出视图
@@ -187,39 +189,11 @@
     [ProgressHUD showSuccess:@"恭喜您，已是当前最新版本"];
 }
 
-//分享盆友圈
+//分享盆友
 - (void)shareToFriends{
-    UIWindow *widndow = [[UIApplication sharedApplication].delegate window];
-    UIView *shareView = [[UIView alloc] initWithFrame:CGRectMake(0, kHeight - 250, kWidth, 200)];
-    [widndow addSubview:shareView];
-    //微博button
-    UIButton *weiboBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    weiboBtn.frame = CGRectMake(20, 40, 60, 60);
-    [weiboBtn setImage:[UIImage imageNamed:@"sina_normal"] forState:UIControlStateNormal];
-    [shareView addSubview:weiboBtn];
-    
-    //朋友圈button
-    UIButton *friendBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    friendBtn.frame = CGRectMake(100, 40, 60, 60);
-    [friendBtn setImage:[UIImage imageNamed:@"py_normal"] forState:UIControlStateNormal];
-    [shareView addSubview:friendBtn];
-    //微信
-    UIButton *weixinBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    weixinBtn.frame = CGRectMake(180, 40, 60, 60);
-    [weixinBtn setImage:[UIImage imageNamed:@"icon_pay_weixin"] forState:UIControlStateNormal];
-    [shareView addSubview:weixinBtn];
-    
-    //清除
-    UIButton *removeBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    removeBtn.frame = CGRectMake(20, 150, kWidth - 40, 30);
-    [removeBtn setTitle:@"取消" forState:UIControlStateNormal];
-    [shareView addSubview:removeBtn];
-    
-    
-    [UIView animateWithDuration:1.0 animations:^{
-        shareView.alpha = 10.0;
-    
-    }];
+  
+    ShareView *shareView = [[ShareView alloc] init];
+    [self.view addSubview:shareView];
     
     
 }

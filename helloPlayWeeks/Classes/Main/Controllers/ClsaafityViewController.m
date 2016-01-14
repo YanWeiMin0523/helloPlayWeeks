@@ -140,7 +140,7 @@
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     //演出剧目 typeid = 6
     [ProgressHUD show:@"拼命加载中……"];
-    [manager GET:[NSString stringWithFormat:@"%@&page=%ld&typeid=%@", kClassfityActivity, _pageCount, @(6)] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [manager GET:[NSString stringWithFormat:@"%@&page=%ld&typeid=%@", kClassfityActivity, (long)_pageCount, @(6)] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [ProgressHUD showSuccess:@"加载完成"];
         NSDictionary *dic = responseObject;
@@ -181,7 +181,7 @@
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     //景点场馆 typeid = 23
     [ProgressHUD show:@"拼命加载中……"];
-    [manager GET:[NSString stringWithFormat:@"%@&page=%ld&typeid=%@", kClassfityActivity, _pageCount, @(23)] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [manager GET:[NSString stringWithFormat:@"%@&page=%ld&typeid=%@", kClassfityActivity, (long)_pageCount, @(23)] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [ProgressHUD showSuccess:@"加载完成"];
         NSDictionary *dic = responseObject;
@@ -222,7 +222,7 @@
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     //学习益智 typeid = 22
     [ProgressHUD show:@"拼命加载中……"];
-    [manager GET:[NSString stringWithFormat:@"%@&page=%ld&typeid=%@", kClassfityActivity, _pageCount, @(22)] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [manager GET:[NSString stringWithFormat:@"%@&page=%ld&typeid=%@", kClassfityActivity, (long)_pageCount, @(22)] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [ProgressHUD showSuccess:@"加载完成"];
         NSDictionary *dic = responseObject;
@@ -264,7 +264,7 @@
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     //亲子旅游   typeid = 21
     [ProgressHUD show:@"拼命加载中……"];
-    [manager GET:[NSString stringWithFormat:@"%@&page=%ld&typeid=%@", kClassfityActivity, _pageCount, @(21)] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [manager GET:[NSString stringWithFormat:@"%@&page=%ld&typeid=%@", kClassfityActivity, (long)_pageCount, @(21)] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [ProgressHUD showSuccess:@"加载完成"];
         NSDictionary *dic = responseObject;

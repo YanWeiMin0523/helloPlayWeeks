@@ -105,7 +105,7 @@
     //数据获取
     AFHTTPSessionManager *httpManager = [AFHTTPSessionManager manager];
     httpManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    [httpManager GET:[NSString stringWithFormat:@"%@&page=%ld", kGoodActivity, _pageCount] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [httpManager GET:[NSString stringWithFormat:@"%@&page=%ld", kGoodActivity, (long)_pageCount] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dic = responseObject;

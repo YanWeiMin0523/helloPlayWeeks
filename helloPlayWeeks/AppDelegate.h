@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class MineViewController;
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
+{
+    NSString *wntoken;
+    NSString *wbCurrentUserID;
+}
+@property(strong, nonatomic) UIWindow *window;
 @property(nonatomic, strong) UITabBarController *tabBarVC;
+@property(nonatomic, copy) NSString *wbtoken;
+@property(nonatomic, copy) NSString *wbCurrentUserID;
+@property(nonatomic, copy) NSString *wbRefreshToken;
 
 @end
 

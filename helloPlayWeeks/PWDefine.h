@@ -34,9 +34,12 @@ typedef NS_ENUM(NSInteger, ClassfityListType){
 #define kDiscover @"http://e.kumi.cn/app/found.php?_s_=a82c7d49216aedb18c04a20fd9b0d5b2&_t_=1451310230&channelid=appstore&cityid=1&lat=34.62172291944134&lng=112.4149512442411"
 
 //新浪微博分享
-#define kAppKey @"1019506102"
-#define kRedirectURI @"http://weibo.com/u/5610362932/home?wvr=5"
+#define kAppKey @"1853483581"
+#define kRedirectURI @"https://api.weibo.com/oauth2/default.html"
 #define kAppSecret @"fb5db329af39e183e4e14d11a7c82e03"
 
+//微信分享
+#define kWeixinKey @"wx63bad32379646e98"
+#define kWeixinAppSecret @"432df58689cb5c87d64426f061645ca5"
 
 #endif /* PWDefine_h */

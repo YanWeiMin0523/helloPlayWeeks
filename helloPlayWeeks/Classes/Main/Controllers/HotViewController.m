@@ -108,7 +108,7 @@
 - (void)loadingData{
     AFHTTPSessionManager *httpManager = [AFHTTPSessionManager manager];
     httpManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    [httpManager GET:[NSString stringWithFormat:@"%@&page=%ld", kHotActivity, _pageCount] parameters:nil progress:^(  NSProgress * _Nonnull downloadProgress) {
+    [httpManager GET:[NSString stringWithFormat:@"%@&page=%ld", kHotActivity, (long)_pageCount] parameters:nil progress:^(  NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dict = responseObject;

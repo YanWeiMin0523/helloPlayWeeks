@@ -209,7 +209,7 @@
     NSString *dateString = [df stringFromDate:date];
     NSString *title = NSLocalizedString(@"今天", nil);
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
+    NSDateComponents *components = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit|NSDayCalendarUnit
                                                fromDate:date toDate:[NSDate date] options:0];
     NSInteger year = [components year];
     NSInteger month = [components month];
