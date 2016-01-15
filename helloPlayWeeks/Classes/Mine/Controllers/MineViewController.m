@@ -11,6 +11,7 @@
 #import <MessageUI/MessageUI.h>
 #import "ProgressHUD.h"
 #import "ShareView.h"
+#import "LoginViewController.h"
 @interface MineViewController ()<UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate>
 
 @property(nonatomic, strong) UITableView *tableView;
@@ -121,9 +122,9 @@
 
 //点击上部圆形button的方法，进行登陆/注册
 - (void)headAction:(UIButton *)btn{
-    
-
-    
+    UIStoryboard *storboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+    UINavigationController *nav = [storboard instantiateViewControllerWithIdentifier:@"LoginID"];
+    [self.navigationController presentViewController:nav animated:YES completion:nil];
 }
 
 - (void)clearImage{

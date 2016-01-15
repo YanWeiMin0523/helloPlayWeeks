@@ -61,7 +61,7 @@
     
     
     //请求网络
-//    [self requstModel];
+    [self requstModel];
     
     [self configTableViewHiderView];
     

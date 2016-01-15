@@ -12,6 +12,7 @@
 #import "DiscoverViewController.h"
 #import "WeiboSDK.h"
 #import "WXApi.h"
+#import <BmobSDK/Bmob.h>
 @interface AppDelegate ()<WeiboSDKDelegate, WXApiDelegate>
 
 @end
@@ -26,6 +27,11 @@
     // Override point for customization after application launch.
     [WeiboSDK enableDebugMode:YES];
     [WeiboSDK registerApp:kAppKey];
+    
+    //注册BmobKey
+    [Bmob registerWithAppKey:kBmobKey];
+    
+    
     
     //UITabBarCOntroller
     self.tabBarVC = [[UITabBarController alloc] init];

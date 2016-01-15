@@ -9,6 +9,7 @@
 #import "ShareViewController.h"
 
 @interface ShareViewController ()
+@property (weak, nonatomic) IBOutlet UITextView *ShareText;
 
 @end
 

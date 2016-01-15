@@ -41,5 +41,6 @@ typedef NS_ENUM(NSInteger, ClassfityListType){
 //微信分享
 #define kWeixinKey @"wx63bad32379646e98"
 #define kWeixinAppSecret @"432df58689cb5c87d64426f061645ca5"
+#define kBmobKey @"0943f77b82ebeef017937871ceb7060e"
 
 #endif /* PWDefine_h */

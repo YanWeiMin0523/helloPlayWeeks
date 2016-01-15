@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--登陆-->
+        <scene sceneID="gZA-mT-x32">
+            <objects>
+                <viewController id="1eE-eb-8rc" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pO4-fj-Acf"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ejb-bJ-Qfo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LEv-Xm-cGX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IoJ-RS-pXS">
+                                <rect key="frame" x="55" y="117" width="106" height="56"/>
+                                <color key="backgroundColor" red="0.20749383220000001" green="0.76634457239999998" blue="0.97879831409999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="添加数据">
+                                    <color key="titleColor" red="1" green="0.1243792345" blue="0.21541867179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="AddData:" destination="1eE-eb-8rc" eventType="touchUpInside" id="tjh-VO-KI5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VwR-Af-tOg">
+                                <rect key="frame" x="55" y="248" width="106" height="56"/>
+                                <color key="backgroundColor" red="0.20749383220000001" green="0.76634457239999998" blue="0.97879831409999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="删除数据">
+                                    <color key="titleColor" red="1" green="0.1243792345" blue="0.21541867179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="DeledeData:" destination="1eE-eb-8rc" eventType="touchUpInside" id="ZZt-np-K3e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGZ-Xq-tQ2">
+                                <rect key="frame" x="55" y="312" width="106" height="56"/>
+                                <color key="backgroundColor" red="0.20749383220000001" green="0.76634457239999998" blue="0.97879831409999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="查找数据">
+                                    <color key="titleColor" red="1" green="0.1243792345" blue="0.21541867179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="SelectData:" destination="1eE-eb-8rc" eventType="touchUpInside" id="Q9X-2h-Rdl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRs-SG-Kph">
+                                <rect key="frame" x="55" y="184" width="106" height="56"/>
+                                <color key="backgroundColor" red="0.20749383220000001" green="0.76634457239999998" blue="0.97879831409999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="更改数据">
+                                    <color key="titleColor" red="1" green="0.1243792345" blue="0.21541867179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="ModeData:" destination="1eE-eb-8rc" eventType="touchUpInside" id="qGs-VC-Gck"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="登陆" id="IMF-rH-OcW"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Dh-D0-3Qg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1108.5" y="430.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IBm-Od-9ly">
+            <objects>
+                <navigationController storyboardIdentifier="LoginID" automaticallyAdjustsScrollViewInsets="NO" id="kE3-Ga-W1g" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a2J-Xy-I7L">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.061189350330000003" green="0.76634457239999998" blue="0.79137541119999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                            <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1eE-eb-8rc" kind="relationship" relationship="rootViewController" id="1mi-Q4-Hmh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BNF-Va-B8y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="616" y="431"/>
+        </scene>
+    </scenes>
+</document>
