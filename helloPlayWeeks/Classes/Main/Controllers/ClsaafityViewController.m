@@ -36,7 +36,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"分类列表";
-    [self showBackButton];
+    [self showBackButtonWithImage:@"back"];
     self.tabBarController.tabBar.hidden = YES;
     self.view.backgroundColor = [UIColor whiteColor];
     _pageCount = 1;

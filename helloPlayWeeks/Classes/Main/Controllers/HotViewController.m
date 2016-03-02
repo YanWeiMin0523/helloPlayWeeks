@@ -26,7 +26,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self showBackButton];
+    [self showBackButtonWithImage:@"back"];
     self.title = @"热门专题";
     //隐藏tabBar
     self.tabBarController.tabBar.hidden = YES;

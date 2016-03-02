@@ -18,13 +18,12 @@
 #import "ClsaafityViewController.h"
 #import "GoodThemeViewController.h"
 #import "HotViewController.h"
-@interface MainViewController ()<UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
+@interface MainViewController ()<UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, cityNameDelegate>
 {
     int timerCount;
+    NSString *citySelectID;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
-
 //全部列表数据
 @property(nonatomic, strong) NSMutableArray *listArray;
 //推荐专题数据
@@ -37,7 +36,7 @@
 @property(nonatomic, strong) NSTimer *timer;
 @property(nonatomic, strong) UIScrollView *scrollView;
 @property(nonatomic, strong) UIPageControl *pageControl;
-
+@property(nonatomic, strong) UIButton *leftBtn;
 @end
 
 @implementation MainViewController
@@ -45,20 +44,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    citySelectID = @"1";
     
     //注册cell
     [self.tableView registerNib:[UINib nibWithNibName:@"MainTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     
     //导航栏小按钮
-    UIBarButtonItem *leftBarBtn = [[UIBarButtonItem alloc] initWithTitle:@"北京" style:UIBarButtonItemStylePlain target:self action:@selector(selectCityAction:)];
-    leftBarBtn.tintColor = [UIColor whiteColor];
-    self.navigationItem.leftBarButtonItem = leftBarBtn;
+    self.leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.leftBtn.frame = CGRectMake(0, 0, 60, 40);
+    [self.leftBtn setImage:[UIImage imageNamed:@"btn_chengshi"] forState:UIControlStateNormal];
+    //调整button图片的位置
+    self.leftBtn.imageEdgeInsets = UIEdgeInsetsMake(0, self.leftBtn.frame.size.width - 25, 0, 0);
+    //调整button字体的位置，UIEdgeInsetsMake(上top，左left，下bottom，右right)
+    self.leftBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -30, 0, 10);
+    [self.leftBtn setTitle:@"北京" forState:UIControlStateNormal];
+    [self.leftBtn addTarget:self action:@selector(selectCityAction:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc] initWithCustomView:self.leftBtn];
+    leftBarButton.tintColor = [UIColor whiteColor];
+    
+    self.navigationItem.leftBarButtonItem = leftBarButton;
     
     //right
     UIBarButtonItem *rightBarBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(searchAction:)];
     rightBarBtn.tintColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItem = rightBarBtn;
-    
     
     //请求网络
     [self requstModel];
@@ -84,8 +93,10 @@
     MainTableViewCell *mainCell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
     NSMutableArray *array = self.listArray[indexPath.section];
+    //防止数组越界访问
+    if (indexPath.row < array.count) {
     mainCell.mainMOdel = array[indexPath.row];
-    
+    }
     //点击单元格颜色不变
     mainCell.selectionStyle = UITableViewCellSelectionStyleNone;
     return mainCell;
@@ -143,9 +154,22 @@
 //选择城市
 - (void)selectCityAction:(UIBarButtonItem *)barBtn{
     SelectCityViewController *selectCityVC = [[SelectCityViewController alloc] init];
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:selectCityVC];
+    selectCityVC.delegate = self;
     
-    
-    [self.navigationController presentViewController:selectCityVC animated:YES completion:nil];
+    [self.navigationController presentViewController:navVC animated:YES completion:nil];
+}
+//实现代理方法
+- (void)getCityName:(NSString *)name cityID:(NSString *)cityid{
+    citySelectID = cityid;
+    NSInteger edge = -25;
+    [self.leftBtn setTitle:name forState:UIControlStateNormal];
+    if (name.length > 2) {
+        edge = -15;
+    }
+    [self.leftBtn setImageEdgeInsets:UIEdgeInsetsMake(0, self.leftBtn.frame.size.width + edge, 0, 0)];
+    //城市ID改变之后重新请求网络
+    [self requstModel];
 }
 
 //搜索按钮
@@ -211,10 +235,11 @@
 
 //网络请求数据
 - (void)requstModel{
-    NSString *urlStr = kMainDataList;
     AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
     [manger.responseSerializer setAcceptableContentTypes:[NSSet setWithObject:@"text/html"]];
-    [manger GET:urlStr parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    NSNumber *lat = [[NSUserDefaults standardUserDefaults] valueForKey:@"lat"];
+    NSNumber *lng = [[NSUserDefaults standardUserDefaults] valueForKey:@"lng"];
+    [manger GET:[NSString stringWithFormat:@"%@&cityid=%@&lat=%@&lng=%@", kMainDataList, citySelectID, lat, lng]  parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
 
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *resultDic = responseObject;
@@ -223,8 +248,11 @@
         if ([status isEqualToString:@"success"] && code == 0) {
             NSDictionary *dic = resultDic[@"success"];
             //推荐活动
+            //改变城市id之后，移除原来的数据
+            if (self.activityArray.count > 0) {
+                [self.activityArray removeAllObjects];
+            }
             NSArray *acDataArray = dic[@"acData"];
-            
             for (NSDictionary *dict in acDataArray) {
                 MainModel *mainModel = [[MainModel alloc] initMainWithDictronary:dict];
                 [self.activityArray addObject:mainModel];
@@ -233,6 +261,10 @@
             [self.listArray addObject:self.activityArray];
             
             //推荐专题
+            //改变城市id之后，移除原来的数据
+            if (self.recommandArray.count > 0) {
+                [self.recommandArray removeAllObjects];
+            }
             NSArray *rcDataArray = dic[@"rcData"];
             for (NSDictionary *dict in rcDataArray) {
                 MainModel *model = [[MainModel alloc] initMainWithDictronary:dict];
@@ -244,6 +276,10 @@
             [self.tableView reloadData];
             
             //推荐广告
+            //改变城市id之后，移除原来的数据
+            if (self.adArray.count > 0) {
+                [self.adArray removeAllObjects];
+            }
             NSArray *adDataArray = dic[@"adData"];
             for (NSDictionary *dict in adDataArray) {
                 
@@ -266,8 +302,6 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         YWMLog(@"failure = %@", error);
     }];
-    
-   
     
 }
 

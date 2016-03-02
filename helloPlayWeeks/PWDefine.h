@@ -18,7 +18,7 @@ typedef NS_ENUM(NSInteger, ClassfityListType){
 };
 
 //首页数据接口
-#define kMainDataList @"http://e.kumi.cn/app/v1.3/index.php?_s_=02a411494fa910f5177d82a6b0a63788&_t_=1451307342&channelid=appstore&cityid=1&lat=34.62172291944134&limit=30&lng=112.4149512442411&page=1"
+#define kMainDataList @"http://e.kumi.cn/app/v1.3/index.php?_s_=02a411494fa910f5177d82a6b0a63788&_t_=1451307342&channelid=appstore&limit=30&page=1"
 
 //活动详情接口
 #define kActivityDetail @"http://e.kumi.cn/app/articleinfo.php?_s_=6055add057b829033bb586a3e00c5e9a&_t_=1452071715&channelid=appstore&lat=34.61356779156581&lng=112.4141403843618"
@@ -32,6 +32,8 @@ typedef NS_ENUM(NSInteger, ClassfityListType){
 #define kClassfityActivity @"http://e.kumi.cn/app/v1.3/catelist.php?_s_=78284130ab87a8396ec03073eac9c50a&_t_=1452495156&channelid=appstore&cityid=1&lat=34.61356398594803&limit=30&lng=112.4140434532402"
 //发现的接口
 #define kDiscover @"http://e.kumi.cn/app/found.php?_s_=a82c7d49216aedb18c04a20fd9b0d5b2&_t_=1451310230&channelid=appstore&cityid=1&lat=34.62172291944134&lng=112.4149512442411"
+//城市选择的接口
+#define kSelectCity @"http://e.kumi.cn/app/citylist.php"
 
 //新浪微博分享
 #define kAppKey @"1853483581"

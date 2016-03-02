@@ -32,7 +32,7 @@
     // Do any additional setup after loading the view.
     
     //调用返回按钮
-    [self showBackButton];
+    [self showBackButtonWithImage:@"back"];
     //隐藏tabBar
     self.tabBarController.tabBar.hidden = YES;
     

@@ -29,7 +29,7 @@
     // Do any additional setup after loading the view.
     self.title = @"精选活动";
     self.tabBarController.tabBar.hidden = YES;
-    [self showBackButton];
+    [self showBackButtonWithImage:@"back"];
     self.view.backgroundColor = [UIColor whiteColor];
     //注册cell
     [self.tableView registerNib:[UINib nibWithNibName:@"GoodTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];

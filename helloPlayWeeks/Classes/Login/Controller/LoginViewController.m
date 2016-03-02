@@ -8,11 +8,12 @@
 
 #import "LoginViewController.h"
 #import <BmobSDK/Bmob.h>
+#import "RegisterViewController.h"
 @interface LoginViewController ()
-- (IBAction)AddData:(id)sender;
-- (IBAction)ModeData:(id)sender;
-- (IBAction)DeledeData:(id)sender;
-- (IBAction)SelectData:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *userTextFiled;
+@property (weak, nonatomic) IBOutlet UITextField *passwordText;
+
+
 
 @end
 
@@ -21,16 +22,52 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self showBackButton];
+    [self showBackButtonWithImage:@"back"];
 
+    self.passwordText.secureTextEntry = YES;
     
 }
+//登陆
+- (IBAction)loginBtn:(id)sender {
+    [BmobUser loginWithUsernameInBackground:self.userTextFiled.text password:self.passwordText.text block:^(BmobUser *user, NSError *error) {
+        if (user) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"用户不存在，请注册" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            UIStoryboard *storyBord = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+            RegisterViewController *registerVC = [storyBord instantiateViewControllerWithIdentifier:@"RegisterID"];
+            [self.navigationController pushViewController:registerVC animated:YES];
+            //回收键盘
+            [self.view endEditing:YES];
+            
+        }];
+        UIAlertAction *alertSure = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        
+        [alert addAction:alertAction];
+        [alert addAction:alertSure];
+        [self presentViewController:alert animated:YES completion:nil];
+    }];
+    
+    
+}
+
+//空白处回收键盘
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+}
+//return回收键盘
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+
 
 - (void)leftBarBtnAction:(UIButton *)btn{
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -116,4 +153,5 @@
         }
     }];
 }
+
 @end

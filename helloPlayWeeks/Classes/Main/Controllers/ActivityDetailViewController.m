@@ -27,7 +27,7 @@
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"活动详情";    
     //添加类目之后引入的方法
-    [self showBackButton];
+    [self showBackButtonWithImage:@"back"];
     //隐藏tabBar
     self.tabBarController.tabBar.hidden = YES;
     

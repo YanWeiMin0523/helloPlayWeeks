@@ -7,7 +7,6 @@
 //
 
 #import "GoodTableViewCell.h"
-#import "GoodModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 @interface GoodTableViewCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *headImage;
