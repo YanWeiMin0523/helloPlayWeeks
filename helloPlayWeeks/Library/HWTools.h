@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "playWeeks.pch"
 @interface HWTools : NSObject
 
 #pragma mark ----- 时间转换相关方法

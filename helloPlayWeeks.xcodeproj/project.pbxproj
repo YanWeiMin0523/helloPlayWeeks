@@ -364,8 +364,8 @@
 		7ABF04001C3A4E33009205B6 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				7A3AB44B1C464FC80080DAB0 /* libWeiboSDK */,
 				7AB7A78B1C43924900127A45 /* VOSegmentedControl */,
+				7A3AB44B1C464FC80080DAB0 /* libWeiboSDK */,
 				7A3975EC1C3F9DF4004FE794 /* PullingRefreshTableView */,
 				7ADDCD041C3CB30A00654B93 /* PWDefine.h */,
 				7ADDCD3D1C3D202B00654B93 /* UIViewController+Common.h */,

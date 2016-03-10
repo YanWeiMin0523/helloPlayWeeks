@@ -106,7 +106,7 @@
     self.window.rootViewController = self.tabBarVC;
     
     //向微信注册
-    [WXApi registerApp:@"wx63bad32379646e98"];
+    [WXApi registerApp:kWeixinKey];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
